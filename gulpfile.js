@@ -21,6 +21,7 @@ gulp.task('scss', function() {
       css: 'public/assets/css/',
       sass: 'src/scss/'
     }))
+    .on('error', function(){})
     .pipe(gulp.dest('public/assets/css/'));
 });
 
