@@ -1,3 +1,14 @@
+@import "partials/fonts";
+
 body {
-  background: #f00;
+  background: #CBE7FF;
+  color: #333;
+}
+
+h1 {
+  @include subheader;
+}
+
+h2 {
+  @include header;
 }
