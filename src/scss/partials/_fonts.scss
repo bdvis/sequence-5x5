@@ -1,9 +1,11 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,400,900);
+//@import url("//fonts.googleapis.com/css?family=Lato:100,400,900");
 
 $Lato: "Lato";
+$Aktiv: "aktiv-grotesk";
+// 200, 300, 500, 800
 
 body {
-  font-family: $Lato;
+  font-family: $Aktiv;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
@@ -12,10 +14,10 @@ body {
 @mixin header {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 82px;
-  font-weight: 900;
+  font-size: 92px;
+  font-weight: 200;
   line-height: 1;
-  letter-spacing: -1px;
+  letter-spacing: -3px;
   
   span {
     opacity: .5;
@@ -25,8 +27,8 @@ body {
 @mixin subheader {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 32px;
-  font-weight: 100;
+  font-size: 18px;
+  font-weight: 800;
   line-height: 1;
   letter-spacing: -1px;
   text-transform: uppercase;
