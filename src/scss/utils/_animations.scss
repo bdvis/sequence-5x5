@@ -1,0 +1,15 @@
+@include keyframes(pulse) {
+  0%, 100% {
+    transform: scale(.01, .01);
+  }
+  
+  50% {
+    transform: scale(.018);
+  }
+}
+
+@include keyframes(going-fullscreen) {
+  100% {
+    transform: scale(1, 1);
+  }
+}

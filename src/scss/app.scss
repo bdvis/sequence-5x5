@@ -1,14 +1,75 @@
+@import "compass/reset";
+@import "compass/css3";
+
+@import "partials/colors";
 @import "partials/fonts";
+@import "utils/animations";
 
 body {
-  background: #CBE7FF;
-  color: #333;
+  background: #202020;
 }
 
 h1 {
-  @include subheader;
+  @extend .header;
 }
 
 h2 {
-  @include header;
+  @extend .subheader;
+}
+
+.root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  
+  > section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    .content-wrap {
+      display: none;
+      width: 100%;
+      height: 100%;
+      
+      .content {
+        position: relative;
+        display: table-cell;
+        vertical-align: middle;
+        z-index: 20;
+      }
+    }
+    
+    .backdrop {
+      $backdrop_size: 112vw;
+      position: absolute;
+      margin-left: -($backdrop_size / 2);
+      margin-top: -($backdrop_size / 2);
+      width: $backdrop_size;
+      height: $backdrop_size;
+      left: 50%;
+      top: 50%;
+      z-index: 10;
+      border-radius: 50%;
+      
+      transform-origin: center center;
+      transform: scale(0, 0);
+      -webkit-backface-visibility: hidden;
+      
+      &.pulses {
+        animation: pulse 3.35s infinite;
+        animation-timing-function: ease-in-out;
+      }
+      
+      &.is-fullscreen {
+        animation: going-fullscreen .65s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+      }
+      
+    }
+  }
 }

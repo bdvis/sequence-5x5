@@ -9,9 +9,7 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-
-
-@mixin header {
+.header {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 92px;
@@ -24,7 +22,7 @@ body {
   }
 }
 
-@mixin subheader {
+.subheader {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 18px;
