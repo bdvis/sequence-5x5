@@ -14,8 +14,8 @@ server.listen(process.env.PORT || 3000);
 io.on('connection', function(socket) {
   console.log(chalk.green('[Client]'), chalk.green('Connected'));
   
-  socket.on('event', function(data) {
-    io.emit('event', data);
+  socket.on('message', function(data) {
+    io.emit('message', data);
   });
   
   socket.on('disconnect', function() {

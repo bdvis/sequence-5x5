@@ -31,7 +31,10 @@ gulp.task('js', function() {
     .pipe(browserify({
       insertGlobals: true
     }))
-    .on('error', function(){})
+    .on('error', function(){
+      console.log('> Browserify error');
+      console.log(arguments);
+    })
     .pipe(uglify())
     .on('error', function(){})
     .pipe(gulp.dest('public/assets/js/'));

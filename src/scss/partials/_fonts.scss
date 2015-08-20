@@ -17,8 +17,8 @@ body {
   line-height: 1;
   letter-spacing: -3px;
   
-  span {
-    opacity: .5;
+  em {
+    @extend .text-lighter;
   }
 }
 

@@ -1,8 +1,8 @@
 var $ = require('jquery-browserify'),
-    io = require('socket.io-client')();
+    API = require('./utils/api');
 
 $('button').on('click', function(e) {
   e.preventDefault();
   
-  io.emit('event', { msg: 'Remote says hi.' });
+  API.send(API.remote, API.remote.navigation, $(this).data('dir'));
 });
