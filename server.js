@@ -3,11 +3,15 @@ var http = require('http'),
     socket = require('socket.io'),
     chalk = require('chalk'),
     
+    local = process.env.PORT !== '80',
+    
     app = express(),
     server = http.createServer(app),
     io = socket(server);
 
-app.use('/', express.static('public'));
+app.use('/', express.static('public', {
+  etag: local? false : true
+}));
 
 server.listen(process.env.PORT || 3000);
 
