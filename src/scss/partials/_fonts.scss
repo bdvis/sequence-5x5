@@ -4,8 +4,8 @@
 
 $Lato: "Lato";
 $Aktiv: "aktiv-grotesk";
-$Universal: "P22BayerUniversal";
 // 200, 300, 500, 800
+$Universal: "P22BayerUniversal";
 
 body {
   font-family: $Aktiv;
@@ -21,7 +21,7 @@ body {
   letter-spacing: -3px;
   
   em {
-    @extend .text-lighter;
+    @extend .text-light;
   }
   
   &.text-xlarge {
