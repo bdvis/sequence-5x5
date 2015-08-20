@@ -1,5 +1,6 @@
 var $ = require('jquery-browserify'),
-    Slideshow = require('./app/slideshow')();
+    Slideshow = require('./app/slideshow')(),
+    Graph = require('./app/graph')();
 
 $(window).on('keyup', function(e) {
   if (e.which === 39)
@@ -7,4 +8,4 @@ $(window).on('keyup', function(e) {
   
   if (e.which === 37)
     Slideshow.go(-1);
-})
+});

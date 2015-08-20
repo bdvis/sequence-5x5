@@ -1,0 +1,55 @@
+@import "compass/reset";
+
+@import "partials/colors";
+@import "partials/fonts";
+
+@import "partials/btn";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: $gray-dark;
+}
+
+.root {
+  margin: auto;
+  width: 90vw;
+  height: 100%;
+  position: relative;
+  
+  .sticky {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    
+    &.top { top: 5vh; }
+    &.middle { top: 48vh; }
+    &.bottom { bottom: 5vh; }
+  }
+  
+  .votes {
+    font-size: 0;
+    
+    span {
+      margin: 0 1.25%;
+      padding: 10px;
+      
+      box-sizing: border-box;
+      display: inline-block;
+      width: 18%;
+      
+      font-family: $Aktiv;
+      font-size: 22px;
+      font-weight: 500;
+      color: #fff;
+      text-align: center;
+      background: $green;
+      
+      &:first-child { margin-left: 0; }
+      &:last-child { margin-right: 0; }
+    }
+  }
+}

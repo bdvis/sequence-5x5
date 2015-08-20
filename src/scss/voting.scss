@@ -1,0 +1,60 @@
+@import "compass/reset";
+
+@import "partials/colors";
+@import "partials/fonts";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: $gray-dark;
+}
+
+.root {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  
+  ul {
+    li {
+      width: 100%;
+      height: 20vh;
+      
+      div {
+        padding: 0 5vh;
+        display: table-cell;
+        vertical-align: middle;
+        width: 100vw;
+        height: 20vh;
+        
+        @extend .header;
+        color: #fff;
+        letter-spacing: 0;
+        font-size: 28px;
+        
+        strong {
+          display: block;
+          
+          @extend .subheader;
+          letter-spacing: 0;
+          font-size: 12px;
+        }
+        
+        &:after {
+          content: '›';
+          float: right;
+        }
+        
+        &.no-chevron:after {
+          content: '';
+        }
+      }
+      
+      &.bg-gray {
+        div { color: #000; }
+      }
+    }
+  }
+  
+}

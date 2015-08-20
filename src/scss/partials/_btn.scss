@@ -1,0 +1,26 @@
+.btn {
+  
+  margin: 0 0 10px;
+  padding: 10px 0;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  display: block;
+  background: $orange;
+  
+  color: #fff;
+  font-family: $Aktiv;
+  font-size: 48px;
+  font-weight: 200;
+  letter-spacing: -1px;
+  text-align: center;
+  text-transform: uppercase;
+  
+  &.btn-sm {
+    font-size: 32px;
+    background: rgba($orange, .5);
+  }
+  
+}

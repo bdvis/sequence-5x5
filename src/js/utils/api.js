@@ -8,6 +8,19 @@ var $ = require('jquery-browserify'),
         
         // Called when navigating forward/backwards
         navigation: 'navigation'
+      },
+      vote: {
+        toString: function() { return 'vote'; },
+        
+        // Reset all votes to 0
+        reset_votes: 'reset_votes',
+        
+        // Submit a vote with { "id": "choiceID" }
+        submit_vote: 'submit_vote',
+        
+        // After voting happens, sends the voting data
+        received_votes: 'received_votes',
+        get_votes: 'get_votes' // Alias of received_votes
       }
     };
 

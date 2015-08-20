@@ -6,7 +6,7 @@
 @import "utils/animations";
 
 body {
-  background: #202020;
+  background: $gray-dark;
 }
 
 h1 {
@@ -83,4 +83,56 @@ h2 {
       
     }
   }
+  
+  .vote-graph {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 50vh;
+    z-index: 50;
+    display: table;
+    
+    @include transform(translate3d(0, 50vh, 0));
+    @include transition(transform .25s ease-out);
+    
+    &.is-visible {
+      @include transform(translate3d(0, 0, 0));
+    }
+    
+    li {
+      padding: 4px 0;
+      
+      display: table-cell;
+      position: relative;
+      
+      vertical-align: bottom;
+      text-align: center;
+      
+      span {
+        position: relative;
+        z-index: 10;
+        
+        color: #fff;
+        font-family: $Aktiv;
+        font-weight: 200;
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+      
+      i {
+        opacity: .5;
+        
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 32px;
+        min-height: 32px;
+        z-index: 5;
+        
+        @include transition(height .25s ease-in-out);
+      }
+    }
+  }
+  
 }
