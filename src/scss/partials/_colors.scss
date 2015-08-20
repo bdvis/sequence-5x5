@@ -1,3 +1,5 @@
+@import "compass/css3";
+
 $gray: #e7e7e7;
 $gray-dark: #202020;
 $blue: #124256;
@@ -25,7 +27,13 @@ $yellow: #ed8c2b;
 .text-orange { color: $orange; }
 .text-yellow { color: $yellow; }
 
-.text-light { opacity: .5; }
-.text-lighter { opacity: .25; }
+.text-light { opacity: .35; }
+.text-lighter { opacity: .2; }
 
 .text-upcase { text-transform: uppercase; }
+
+.text-rainbow {
+  @include background-image(linear-gradient(to right, $pink, $orange, $yellow, $green, $blue, $purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

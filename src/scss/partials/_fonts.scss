@@ -23,6 +23,10 @@ body {
   em {
     @extend .text-lighter;
   }
+  
+  &.text-xlarge {
+    font-size: 168px;
+  }
 }
 
 .subheader {

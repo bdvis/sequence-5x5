@@ -17,6 +17,16 @@ h2 {
   @extend .subheader;
 }
 
+h3 {
+  @extend .header;
+  
+  font-size: 48px;
+  letter-spacing: -1px;
+}
+
+.fl { float: left; clear: both; }
+.fr { float: right; }
+
 .root {
   position: relative;
   width: 100vw;
