@@ -41,6 +41,10 @@ h3 {
     height: 100%;
     z-index: 10;
     
+    &.hides-votes {
+      z-index: 100;
+    }
+    
     .content-wrap {
       display: none;
       width: 100%;

@@ -26,6 +26,7 @@ $yellow: #ed8c2b;
 .text-pink { color: $pink; }
 .text-orange { color: $orange; }
 .text-yellow { color: $yellow; }
+.text-white { color: #fff;}
 
 .text-light { opacity: .35; }
 .text-lighter { opacity: .2; }
@@ -36,4 +37,33 @@ $yellow: #ed8c2b;
   @include background-image(linear-gradient(to right, $pink, $orange, $yellow, $green, $blue, $purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-url {
+  margin-top: 20px;
+  padding: 0 20px 35px;
+  
+  position: relative;
+  
+  &:after {
+    content: '';
+    
+    background: url('/assets/img/cursor.png') no-repeat left top;
+    background-size: cover;
+    
+    display: block;
+    position: absolute;
+    right: -85px;
+    bottom: -190px;
+  }
+  
+  &.typed {
+    background: rgba(#fff, .1);
+    border-bottom: 4px solid #fff;
+    
+    &:after {
+      width: 250px;
+      height: 250px;
+    }
+  }
 }

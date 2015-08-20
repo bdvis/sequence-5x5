@@ -17,7 +17,14 @@ module.exports = function($els, reverse) {
       onUpdate: function() {
         $el[0].innerHTML = $el.data('str').substr(0, o.i)
       },
+      onStart: function() {
+        if (!reverse)
+          $el.addClass('typed');
+      },
       onComplete: function() {
+        if (reverse)
+          $el.removeClass('typed');
+        
         d.resolve();
       }
     });
