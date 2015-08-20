@@ -18,8 +18,11 @@ gulp.task('scss', function() {
     .src('src/scss/*.scss')
     .pipe(compass({
       style: 'compressed',
+      relative: false,
+      http_path: '/',
       css: 'public/assets/css/',
-      sass: 'src/scss/'
+      sass: 'src/scss/',
+      font: 'assets/fonts/'
     }))
     .on('error', function(){})
     .pipe(gulp.dest('public/assets/css/'));

@@ -1,7 +1,10 @@
+@import "compass/css3/font-face";
+
 //@import url("//fonts.googleapis.com/css?family=Lato:100,400,900");
 
 $Lato: "Lato";
 $Aktiv: "aktiv-grotesk";
+$Universal: "P22BayerUniversal";
 // 200, 300, 500, 800
 
 body {
@@ -32,3 +35,8 @@ body {
   text-transform: uppercase;
 }
 
+@include font-face($Universal, font-files("universal.ttf"));
+
+.font-universal {
+  font-family: $Universal;
+}
