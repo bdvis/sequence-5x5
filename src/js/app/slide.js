@@ -9,6 +9,8 @@ function Slide($el, id) {
     var d = $.Deferred()
         t = null;
     
+    $el.trigger('shown');
+    
     if ($backdrop.hasClass('is-fullscreen')) {
       d.resolve();
       

@@ -10,7 +10,8 @@ var http = require('http'),
     io = socket(server),
     
     vote_count = 0,
-    votes = getDefaultVotes();
+    votes = getDefaultVotes(),
+    visible_votes = [];
 
 app.use('/', express.static('public', {
   etag: local? false : true
@@ -44,6 +45,12 @@ function handleVote(vote) {
     case 'get_votes':
       sendVotes();
     break;
+    case 'show_vote':
+      showVote(vote);
+    break;
+    case 'get_shown_votes':
+      sendVisibleVotes();
+    break;
   }
 };
 
@@ -56,8 +63,10 @@ function getDefaultVotes() {
 function resetVotes() {
   vote_count = 0;
   votes = getDefaultVotes();
+  visible_votes = [];
   
   sendVotes();
+  sendVisibleVotes();
 };
 
 function voteSubmitted(vote) {
@@ -79,6 +88,23 @@ function sendVotes() {
       count: vote_count,
       votes: votes
     }
+  });
+};
+
+function showVote(vote) {
+  var id = vote.data.id;
+  
+  if (visible_votes.indexOf(id) < 0)
+    visible_votes.push(id);
+  
+  sendVisibleVotes();
+};
+
+function sendVisibleVotes() {
+  io.emit('message', {
+    role: 'vote',
+    type: 'showed_vote',
+    data: visible_votes
   });
 };
 

@@ -20,7 +20,14 @@ var $ = require('jquery-browserify'),
         
         // After voting happens, sends the voting data
         received_votes: 'received_votes',
-        get_votes: 'get_votes' // Alias of received_votes
+        get_votes: 'get_votes', // Alias of received_votes
+        
+        // Show a vote
+        show_vote: 'show_vote',
+        
+        // A vote was shown
+        showed_vote: 'showed_vote',
+        get_shown_votes: 'get_shown_votes'
       }
     };
 
