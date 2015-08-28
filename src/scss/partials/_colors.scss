@@ -17,6 +17,12 @@ $yellow: #ed8c2b;
 .bg-pink { background-color: $pink; }
 .bg-orange { background-color: $orange; }
 .bg-yellow { background-color: $yellow; }
+.bg-blue-dark { background-color: shade($blue, 40%); }
+.bg-purple-dark { background-color: shade($purple, 40%); }
+.bg-green-dark { background-color: shade($green, 40%); }
+.bg-pink-dark { background-color: shade($pink, 40%); }
+.bg-orange-dark { background-color: shade($orange, 40%); }
+.bg-yellow-dark { background-color: shade($yellow, 40%); }
 
 .text-gray { color: $gray; }
 .text-gray-dark { color: $gray-dark; }

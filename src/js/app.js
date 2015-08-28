@@ -14,3 +14,7 @@ $(window).on('keyup', function(e) {
 $('section.lie').on('shown', function() {
   API.send(API.vote, API.vote.show_vote, { id: Number(this.id) });
 });
+
+$('section.survey-says').on('shown', function() {
+  $('.vote-graph').addClass('is-opaque');
+});

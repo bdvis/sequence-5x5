@@ -5,23 +5,31 @@
 @import "partials/fonts";
 @import "utils/animations";
 
+.app {
+  font-size: 5vh;
+}
+
 body {
   background: $gray-dark;
 }
 
 h1 {
   @extend .header;
+  
+  font-size: 2rem;
 }
 
 h2 {
   @extend .subheader;
+  
+  font-size: .65rem;
 }
 
 h3 {
   @extend .header;
   
-  font-size: 48px;
-  letter-spacing: -1px;
+  font-size: .85rem;
+  letter-spacing: 0;
 }
 
 .fl { float: left; clear: both; }
@@ -109,15 +117,14 @@ h3 {
     @include transform(translate3d(0, 50vh, 0));
     @include transition(transform .25s ease-out);
     
-    &.is-visible {
-      @include transform(translate3d(0, 0, 0));
-    }
-    
     li {
       padding: 4px 0;
       
       display: table-cell;
       position: relative;
+      
+      border: .25vw solid transparent;
+      border-bottom: 0 none;
       
       vertical-align: bottom;
       text-align: center;
@@ -129,12 +136,12 @@ h3 {
         color: #fff;
         font-family: $Aktiv;
         font-weight: 200;
-        font-size: 14px;
+        font-size: .25rem;
         text-transform: uppercase;
       }
       
       i {
-        opacity: .5;
+        opacity: .75;
         
         position: absolute;
         left: 0;
@@ -144,9 +151,30 @@ h3 {
         min-height: 32px;
         z-index: 5;
         
-        @include transition(height .25s ease-in-out);
+        background: #fff;
+        
+        @include transition-property(height, opacity);
+        @include transition-duration(.35s);
+        @include transition-timing-function(ease-in-out);
+        
+        em {
+          position: absolute;
+          left: .5vw;
+          right: .5vw;
+          top: .5vw;
+          bottom: 0;
+        }
       }
     }
+    
+    &.is-visible {
+      @include transform(translate3d(0, 0, 0));
+    }
+    
+    &.is-opaque li i {
+      opacity: 1;
+    }
+    
   }
   
 }
