@@ -24,11 +24,11 @@ body {
     height: $row-height;
     box-sizing: border-box;
     
-    @include transform(translate3d(0, 0, 0));
+    @include transform(translate3d(-100vw, 0, 0));
     @include transition(transform .5s ease-in-out);
     
-    &.is-hidden {
-      @include transform(translate3d(-100vw, 0, 0));
+    &.is-visible {
+      @include transform(translate3d(0, 0, 0));
     }
     
     div {
